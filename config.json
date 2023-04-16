@@ -1,0 +1,51 @@
+{
+    "SEED": 123,
+    "data": {
+        "DATA_PATH": "./data"
+    }, 
+    "training": {
+        "IMG_SIZE": 28, 
+        "N_OUTPUTS": 10, 
+        "N_RESERVOIR": 20, 
+        "ALPHA": 0.0001, 
+        "SPECTRAL_RADIUS": 1, 
+        "SPARSITY": 0.5, 
+        "NOISE": 0.001, 
+        "INPUT_SCALING": 0.1, 
+        "INPUT_SHIFT": 0.05, 
+        "TEACHER_SCALING": 0.001, 
+        "TEACHER_SHIFT": 0.1, 
+        "TEACHER_FORCING": true, 
+        "FEEDBACK_SCALING": 0.2, 
+        "OUT_ACTIVATION": "identity", 
+        "INVERSE_OUT_ACTIVATION": "identity", 
+        "USE_GRADIENT_DESCENT": false, 
+        "LEARNING_RATE": 0.0001, 
+        "L2_RATE": 0.01, 
+        "N_EPOCHS": 1, 
+        "BATCH_SIZE": 1, 
+        "USE_RLS": false, 
+        "FORGET_RATE": 0.9, 
+        "N_TRAINING": 50000, 
+        "N_TEST": 10000
+    }, 
+    "training_gridsearch": {
+        "N_RESERVOIR": [200, 400, 600, 1000, 2000], 
+        "ALPHA": [0.00001, 0.0001, 0.001, 0.01], 
+        "SPECTRAL_RADIUS": [0.5, 0.7, 0.9, 1], 
+        "INPUT_SCALING": [0.01, 0.1, 0.2, 0.5], 
+        "INPUT_SHIFT": [0.01, 0.05, 0.1, 0.2], 
+        "TEACHER_SCALING": [0.0001, 0.001, 0.01, 0.1], 
+        "TEACHER_SHIFT": [0.01, 0.1, 0.2, 0.5], 
+        "TEACHER_FORCING": [false, true], 
+        "FEEDBACK_SCALING": [0.05, 0.1, 0.2, 0.5], 
+        "LEARNING_RATE": [0.00001, 0.0001, 0.001], 
+        "L2_RATE": [0.001, 0.01, 0.1], 
+        "FORGET_RATE": [0.5, 0.6, 0.7, 0.8, 0.9]
+    }, 
+    "training_randomsearch": {
+        "N_RESERVOIR": [200, 400, 600, 1000, 2000], 
+        "TEACHER_FORCING": [false, true], 
+        "FORGET_RATE": [0.5, 0.6, 0.7, 0.8, 0.9]
+    }
+}
